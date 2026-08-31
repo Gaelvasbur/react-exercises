@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import './03_DynamicList.css';
 
 function DynamicList() {
-  // Estado para controlar el texto del input
   const [inputValue, setInputValue] = useState('');
-  // Estado para almacenar la lista de elementos
   const [items, setItems] = useState([]);
 
-  // Función para agregar un nuevo elemento a la lista
   const handleAddItem = () => {
     const text = inputValue.trim();
 
@@ -16,19 +13,15 @@ function DynamicList() {
         return; 
     }
 
-    // Creamos un nuevo objeto con un ID único y el texto
     const newItem = {
       id: Date.now(),
       text: text
     };
 
-    // Agregamos el nuevo objeto al arreglo de elementos
     setItems([...items, newItem]);
-    // Limpiamos el campo del input
     setInputValue('');
   };
 
-  // Función para eliminar un elemento filtrando el arreglo por su ID
   const handleDeleteItem = (idToDelete) => {
     const filteredItems = items.filter(item => item.id !== idToDelete);
     setItems(filteredItems);
@@ -39,7 +32,6 @@ function DynamicList() {
       <h2>Dynamic List</h2>
       
       <div className="form">
-        {/* En React vinculamos el valor del input al estado usando value y onChange */}
         <input 
           type="text" 
           id="input" 
@@ -50,7 +42,6 @@ function DynamicList() {
         <button id="btn-add" onClick={handleAddItem}>Add</button>
       </div>
 
-      {/* Renderizamos el arreglo mapeándolo a elementos de lista HTML */}
       <ul id="dynamic-list">
         {items.map((item) => (
           <li key={item.id}>
