@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import './08_WordAndCharacterCounter.css';
 
 function WordAndCharacterCounter() {
-  // 1. Un solo estado para rastrear todo el texto introducido
   const [text, setText] = useState('');
 
-  // 2. Tu lógica original aplicada directamente al estado 'text'
   const cleanCharacters = text.replace(/[\s\n]/g, ''); 
   const totalCharacters = cleanCharacters.length; 
 
@@ -22,7 +20,6 @@ function WordAndCharacterCounter() {
       <div className="container">
         <h2>Text Counter</h2>
         
-        {/* Controlamos el textarea con value y onChange en React */}
         <textarea 
           id="text-input" 
           placeholder="Type or paste your paragraph here..."
@@ -30,7 +27,6 @@ function WordAndCharacterCounter() {
           onChange={(e) => setText(e.target.value)}
         ></textarea>
         
-        {/* Mostramos las estadísticas calculadas en tiempo real */}
         <div className="stats">
           <div>Words: <span id="word-count">{totalWords}</span></div>
           <div>Characters: <span id="character-count">{totalCharacters}</span></div>
@@ -41,3 +37,4 @@ function WordAndCharacterCounter() {
 }
 
 export default WordAndCharacterCounter;
+
