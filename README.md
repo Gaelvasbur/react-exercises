@@ -3,4 +3,4 @@ Evolution of my frontend js exercises migrated to React + Vite, applying compone
 
 ## 🌐 Project Link
 You can view the live project here: 
-👉  
+👉  https://gaelvasbur.github.io/react-exercises/
